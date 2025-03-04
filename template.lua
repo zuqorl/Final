@@ -25,8 +25,9 @@ tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(state)
             chr.Head.Anchored = false
             wait(1)
 workspace.Races.RaceHandler.StartLobby:FireServer("Race")
-            task.wait(15)
+            task.wait(10)
 workspace.Races.Race.Script.Vote:FireServer("5", "VoteRace")
+                 task.wait(5)
 workspace.Races.Race.Script.Vote:FireServer("5", "VoteLapsOval")
             repeat wait()
             until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest == false
