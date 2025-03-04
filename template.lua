@@ -19,34 +19,20 @@ tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(state)
             if game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == false then
                 local chr = game.Players.LocalPlayer.Character
             local car = chr.Humanoid.SeatPart.Parent.Parent
-             car:PivotTo(CFrame.new(162.18893432617188, 603.7154541015625, 6352.375))
+             car:PivotTo(CFrame.new(1049.2476806640625, 609.7359008789062, 2511.8427734375))
             chr.Head.Anchored = true
             wait(1)
             chr.Head.Anchored = false
             wait(1)
-workspace.Races.RaceHandler.StartLobby:FireServer("Shelby")
+workspace.Races.RaceHandler.StartLobby:FireServer("Race")
             task.wait(15)
-workspace.Races.Shelby.Script.Vote:FireServer("5", "Vote")
+workspace.Races.Shelby.Script.Vote:FireServer("10", "Vote")
             repeat wait()
             until game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true or _G.racetest == false
             elseif game:GetService("Players").LocalPlayer.PlayerGui.Menu.Race.Visible == true then
             for i =1,50 do
-workspace.Races.Shelby.Script.Checkpoint:FireServer(i)
+workspace.Races.Race.Script.Checkpoint:FireServer(i)
 end
 end
 end
 end)
-local example = library:CreateWindow({
-    text = "Misc"
-  })
-  example:AddButton("Force Load Map", function(state)
-    for i,v in pairs(workspace:GetDescendants()) do
-        if v.ClassName == "Model" then
-        spawn(function()
-            game.Players.LocalPlayer:RequestStreamAroundAsync(v.WorldPivot.Position,1)
-            end)
-        wait()
-        end
-        end
-  end)
-   
